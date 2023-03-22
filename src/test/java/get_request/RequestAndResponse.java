@@ -9,7 +9,7 @@ public class RequestAndResponse {
     /*
         1) Postman is used for manual api testing
         2) We use RestAssured library for API Automation Testing
-        3) To type automation script follow this steps:
+        3) To type automation script follow these steps:
               a) Understand the requirement
               b)Type test cases
                 To type the test cases we uses 'Gherkin Language'
@@ -46,13 +46,13 @@ public class RequestAndResponse {
         Response response = given().when().get(url); //
         response.prettyPrint();
 
-        // HTTP Status Code should be 200
+        // HTTP Status Code should be "200"
         System.out.println(response.statusCode());
 
-        //Content Type should be JSON
+        //Content Type should be "JSON"
         System.out.println(response.contentType());
 
-        //Status Line should be HTTP/1.1 200 OK
+        //Status Line should be "HTTP/1.1 200 OK"
         System.out.println(response.statusLine());
 
         //How to see "Header" on console:

@@ -43,8 +43,8 @@ public class Get02 {
         response.
                 then().
                 assertThat().
-                statusCode(404).
-                statusLine("HTTP/1.1 404 Not Found");
+                statusCode(404).                        //HTTP Status code should be 404
+                statusLine("HTTP/1.1 404 Not Found");   //Status Line should be HTTP/1.1 404 Not Found
 
         //How to assert if response body contains any  data
         //Response body contains "Not Found"
