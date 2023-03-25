@@ -34,7 +34,7 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
         public void get04(){
             spec.pathParams("first","todos");
 
-        //Send the request and get the response
+         //Set the expected data
 
 
         //Send the request and get the response
