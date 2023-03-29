@@ -38,7 +38,7 @@ public class Get03 extends JsonPlaceHolderBaseUrl {
 
 
         //Send the request and get the response
-        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Response response = given().spec(spec).when().get("{first}/{second}");
         response.prettyPrint();
 
         //Do assertion

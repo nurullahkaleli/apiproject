@@ -76,7 +76,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
 
         //Set the expected the data
         //Create an object from JsonPlaceHolderTestData class and use the expectedDataMapMethod to create "expectedData"
-        Map<String,Object> expectedData = new JsonPlaceHolderTestData().expectedDataMapMethod(55,"Tidy your room",false);
+        Map<String,Object> expectedData = new JsonPlaceHolderTestData().expectedDataMapMethod(55,"Tidy your room",false);  //Recommended way
 
 
         System.out.println("expectedData = " + expectedData);
