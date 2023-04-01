@@ -17,6 +17,7 @@ public class HerOkuAppTestData {
 
     //This method creates a map for outer json
     public Map<String, Object> expectedDataMethod(String firstname, String lastname, Integer totalprice, Boolean depositpaid, Map<String, String> bookingdates, String additionalneeds) {
+
         Map<String, Object> expectedData = new HashMap<>();
 
         expectedData.put("firstname", firstname);

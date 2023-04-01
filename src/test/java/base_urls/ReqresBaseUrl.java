@@ -10,9 +10,9 @@ public class ReqresBaseUrl {
 
         public RequestSpecification spec;
 
-        @Before
+        @Before //this method will run before each @Test methods.
         public void setUp(){
-            spec = new RequestSpecBuilder().setBaseUri("https://reqres.in").setContentType(ContentType.JSON).build();
+            spec = new RequestSpecBuilder().setBaseUri("https://reqres.in/").setContentType(ContentType.JSON).build();
 
         }
 }
