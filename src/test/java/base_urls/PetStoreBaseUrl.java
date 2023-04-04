@@ -6,11 +6,11 @@ import org.junit.Before;
 
 public class PetStoreBaseUrl {
 
-    protected RequestSpecification spec;
+    public RequestSpecification spec;
 
     @Before  // This will run before each test method
     public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("https://petstore.swagger.io/v2").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://petstore.swagger.io").build();
 
 
 
