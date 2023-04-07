@@ -15,7 +15,16 @@ import static org.testng.Assert.assertTrue;
 
 public class Practice09 extends PetStoreBaseUrl {
 
-    //Using the https://petstore.swagger.io/ document, write an automation test that finds the number of "pets" with a status of "available" and asserts that those are more than 100.
+     /*
+    Given
+        https://petstore.swagger.io/v2/pet/findByStatus?status=available
+    When
+        User sends Get request
+    Then
+        Assert that number of pets whose status is "available" is more than 100
+     */
+
+
 
 //    @Test
 //    public void practice09(){
@@ -34,9 +43,7 @@ public class Practice09 extends PetStoreBaseUrl {
 
 
 
-        //Chatcbt
-
-        @Test
+               @Test
         public void practice09() {
             // Set base URL for the Swagger Petstore API
             String url = "https://petstore.swagger.io/v2/pet/findByStatus?status=available";
