@@ -26,37 +26,32 @@ public class Practice09 extends PetStoreBaseUrl {
 
 
 
-//    @Test
-//    public void practice09(){
+    @Test
+    public void h9(){
+        spec.pathParams("first","v2","second","pet","third","findByStatus").
+                queryParam("status","available");
+        Response response = given(spec).get("{first}/{second}/{third}");
+        response.prettyPrint();
+        int numOfAvailablePets = response.jsonPath().getList("id").size();
+        System.out.println("numOfAvailablePets = " + numOfAvailablePets);
+        assertTrue(numOfAvailablePets>100);
+
+
+
+//               @Test
+//        public void practice09() {
+//            // Set base URL for the Swagger Petstore API
+//            String url = "https://petstore.swagger.io/v2/pet/findByStatus?status=available";
 //
-//        //Set the url
-//        spec.pathParams("first","v2","second","pet","third","findByStatus").
-//                queryParams("status","available");
 //
-//        //Set the expected data
+//            Response response = given().get(url);
+//            response.prettyPrint();
 //
-//        //Send the request and get the response
-//        Response response = given(spec).when().get("{first}/{second/{third}");
-//        response.prettyPrint();
+//            int numOfElements = response.jsonPath().getList("findAll{it.status=='available'}.status").size();
+//            System.out.println("numOfElements = " + numOfElements);
 //
-//   //     response.then().statusCode(200).body()
-
-
-
-               @Test
-        public void practice09() {
-            // Set base URL for the Swagger Petstore API
-            String url = "https://petstore.swagger.io/v2/pet/findByStatus?status=available";
-
-
-            Response response = given().get(url);
-            response.prettyPrint();
-
-            int numOfElements = response.jsonPath().getList("findAll{it.status=='available'}.status").size();
-            System.out.println("numOfElements = " + numOfElements);
-
-            assertEquals(200, response.statusCode());
-            assertTrue(numOfElements > 100);
+//            assertEquals(200, response.statusCode());
+//            assertTrue(numOfElements > 100);
 
 
         }
