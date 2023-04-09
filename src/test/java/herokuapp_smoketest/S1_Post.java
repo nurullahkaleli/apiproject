@@ -52,6 +52,8 @@ public class S1_Post extends HerOkuAppBaseUrl {
                 }
             }
      */
+
+    public static int bookingId;  //We put the created bookingId into a container and use it in other classes.
     @Test
 
     public void postTest(){
@@ -83,6 +85,8 @@ public class S1_Post extends HerOkuAppBaseUrl {
         Assert.assertEquals(bookinDatesPojo.getCheckout(), actualData.getBooking().getBookingdates().getCheckout());
 
         Assert.assertEquals(expectedData.getAdditionalneeds(),actualData.getBooking().getAdditionalneeds());
+
+        bookingId =actualData.getBookingid();
 
 
     }
