@@ -32,7 +32,7 @@ public class S1_Post extends HerOkuAppBaseUrl {
                 "additionalneeds" : "Breakfast"
             }
        When
-            SEnd post request
+            Send post request
        Then
             Status code should be 200
        And

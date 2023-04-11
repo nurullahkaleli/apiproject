@@ -17,9 +17,9 @@ public class AuthenticationHerOkuApp {
         tokenBody.put("password", "password123");
 
         Response response = given().
-                contentType(ContentType.JSON).
-                body(tokenBody).
-                post("https://restful-booker.herokuapp.com/auth");
+                            contentType(ContentType.JSON).
+                            body(tokenBody).
+                            post("https://restful-booker.herokuapp.com/auth");
 
 
         return response.jsonPath().getString("token");
