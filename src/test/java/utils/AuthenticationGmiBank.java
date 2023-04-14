@@ -13,7 +13,6 @@ public class AuthenticationGmiBank {
 
 
 
-
     public static String gmiBankToken() {
 
         Map<String, Object> postBody = new HashMap<>();
