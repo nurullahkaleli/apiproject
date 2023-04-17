@@ -1,12 +1,13 @@
 package pojos;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Country {
-
 
     private String name;
     private List<States> states;
@@ -27,7 +28,7 @@ public class Country {
         this.name = name;
     }
 
-    public Object getStates() {
+    public List<States> getStates() {
         return states;
     }
 
@@ -38,7 +39,7 @@ public class Country {
     @Override
     public String toString() {
         return "Country{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", states=" + states +
                 '}';
     }

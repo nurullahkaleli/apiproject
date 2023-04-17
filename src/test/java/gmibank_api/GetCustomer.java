@@ -71,7 +71,6 @@ public class GetCustomer extends GmiBankBaseUrl {
 
         //Send the request and get the response
         Response response = given(spec).
-                headers("Authorization", "Bearer " + gmiBankToken()).
                 get("{first}/{second}/{third}");
 
         response.prettyPrint();
@@ -93,7 +92,6 @@ public class GetCustomer extends GmiBankBaseUrl {
         assertEquals(expectedData.getSsn(), actualData.getSsn());
         assertEquals(expectedData.getCreateDate(), actualData.getCreateDate());
         assertEquals(expectedData.isZelleEnrolled(), actualData.isZelleEnrolled());
-        assertEquals(expectedData.getCountry().getId(), actualData.getCountry().getId());
         assertEquals(expectedData.getCountry().getName(), actualData.getCountry().getName());
         assertEquals(expectedData.getCountry().getStates(), actualData.getCountry().getStates());
         assertEquals(expectedData.getCountry().getStates(), actualData.getCountry().getStates());
