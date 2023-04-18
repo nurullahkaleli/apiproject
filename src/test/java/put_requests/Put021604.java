@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import pojos.Country;
+import pojos.DummyResponsePojo;
 import pojos.DummyRestApiPojo;
 import test_data.DummyRestApiTestData;
 import utils.ObjectMapperUtils;
@@ -50,11 +51,7 @@ public class Put021604 extends DummyRestApiBaseUrl {
         spec.pathParams("first","update","second","21");
 
         //Set the expected data
-        //1.Way
-//        Map<String, Object> expectedData = new DummyRestApiTestData().expectedDataMapMethod("Tom Hanks", 111111, 23, "Perfect image");
-//        System.out.println("expectedData = " + expectedData);
 
-        //2.Way
         DummyRestApiPojo expectedData = new DummyRestApiPojo("Tom Hanks",111111,23,"Perfect image");
         System.out.println("expectedData = " + expectedData);
 
@@ -63,14 +60,16 @@ public class Put021604 extends DummyRestApiBaseUrl {
         response.prettyPrint();
 
         //Do assertion
-        HashMap actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
+        DummyResponsePojo actualData = response.as(DummyResponsePojo.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(200,response.statusCode());
-//        assertEquals(expectedData.getEmployee_name(),actualData.get("Tom Hanks"));
-//        assertEquals(expectedData.getEmployee_salary(),actualData.get(111111));
-//        assertEquals(expectedData.getEmployee_age(),actualData.get(23));
-//        assertEquals(expectedData.getProfile_image(),actualData.get("Perfect image"));
+        assertEquals(expectedData.getEmployee_name(),actualData.getData().getEmployee_name());
+        assertEquals(expectedData.getEmployee_salary(),actualData.getData().getEmployee_salary());
+        assertEquals(expectedData.getEmployee_age(),actualData.getData().getEmployee_age());
+        assertEquals(expectedData.getProfile_image(),actualData.getData().getProfile_image());
+
+
 
 
     }
