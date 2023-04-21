@@ -28,11 +28,11 @@ public class Post04day0504 extends HerOkuAppBaseUrl {
               "additionalneeds": "Breakfast"
           }
      When
-    I send POST Request to the URL
+        I send POST Request to the URL
    Then
-    Status code is 200
-And
-    Response body is like {
+        Status code is 200
+   And
+        Response body is like {
                             "bookingid": 16,
                             "booking" :{
                                      "firstname": "John",

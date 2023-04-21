@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class DummyRestApiTestData {
 
-    public Map<String, Object> expectedDataMapMethod(String employee_name, Integer employee_salary, Integer employee_age, String profile_image) {
+    public Map<String, Object> expectedDataMethod(String employee_name, Integer employee_salary, Integer employee_age, String profile_image) {
 
         Map<String,Object> expectedData = new HashMap<>();
 

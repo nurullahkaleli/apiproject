@@ -8,12 +8,15 @@ public class DummyResponsePojo {
     private String status;
     private DummyRestApiPojo data;
 
+    private String message;
+
     public DummyResponsePojo() {
     }
 
-    public DummyResponsePojo(String status, DummyRestApiPojo data) {
+    public DummyResponsePojo(String status, DummyRestApiPojo data, String message) {
         this.status = status;
         this.data = data;
+        this.message = message;
     }
 
     public String getStatus() {
@@ -32,11 +35,20 @@ public class DummyResponsePojo {
         this.data = data;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     @Override
     public String toString() {
         return "DummyResponsePojo{" +
                 "status='" + status + '\'' +
                 ", data=" + data +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

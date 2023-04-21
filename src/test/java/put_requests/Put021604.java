@@ -19,17 +19,24 @@ import static org.junit.Assert.assertEquals;
 
 public class Put021604 extends DummyRestApiBaseUrl {
     /*
-     URL: https://dummy.restapiexample.com/api/v1/update/21
-       HTTP Request Method: PUT Request
-       Request body: {
-                        "employee_name": "Tom Hanks",
-                        "employee_salary": 111111,
-                        "employee_age": 23,
-                        "profile_image": "Perfect image"
-                     }
-       Test Case: Type by using Gherkin Language
-       Assert:
+    Given
+           1) URL: https://dummy.restapiexample.com/api/v1/update/21
+           2)            {
+                            "employee_name": "Tom Hanks",
+                            "employee_salary": 111111,
+                            "employee_age": 23,
+                            "profile_image": "Perfect image"
+                         }
+
+     When
+
+        I send PUT Request to the Url
+
+     Then
                 i) Status code is 200
+
+     And
+
                 ii) Response body should be like the following
                     {
                         "status": "success",
@@ -45,9 +52,9 @@ public class Put021604 extends DummyRestApiBaseUrl {
      */
 
     @Test
-    public void put02() throws IOException {
+    public void put02() {
 
-        //Set the expected data
+        //Set the url
         spec.pathParams("first","update","second","21");
 
         //Set the expected data
@@ -64,6 +71,7 @@ public class Put021604 extends DummyRestApiBaseUrl {
         System.out.println("actualData = " + actualData);
 
         assertEquals(200,response.statusCode());
+
         assertEquals(expectedData.getEmployee_name(),actualData.getData().getEmployee_name());
         assertEquals(expectedData.getEmployee_salary(),actualData.getData().getEmployee_salary());
         assertEquals(expectedData.getEmployee_age(),actualData.getData().getEmployee_age());
